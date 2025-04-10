@@ -195,8 +195,10 @@ function deletePlayer(id) {
 }
 function buyChips() {
   const id = parseInt(document.getElementById('player-select').value);
-  const amount = parseInt(document.getElementById('buy-amount').value);
-  if (!id || amount <= 0) return;
+  const amountInput = document.getElementById('buy-amount');
+  const amount = parseInt(amountInput.value);
+  if (!amountInput.value || isNaN(amount) || amount <= 0) return;
+  if (!id) return;
   const p = players.find(p => p.id === id);
   p.totalBuyIn += amount;
   p.chips += amount * chipRate;
@@ -205,8 +207,9 @@ function buyChips() {
   updateUI();
 }
 function buyForAll() {
-  const amount = parseInt(document.getElementById('buy-amount').value);
-  if (amount <= 0) return;
+  const amountInput = document.getElementById('buy-amount');
+  const amount = parseInt(amountInput.value);
+  if (!amountInput.value || isNaN(amount) || amount <= 0) return;
   players.forEach(p => {
     p.totalBuyIn += amount;
     p.chips += amount * chipRate;
