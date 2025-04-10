@@ -150,6 +150,7 @@
   </div>
   <div class="history-record">
     <h3>结算</h3>
+    <div style="color: #aaa; font-size: 14px; margin-bottom: 10px;">请填入每位玩家当前剩余的筹码数量</div>
     <div id="player-chips-inputs"></div>
     
   <div style="margin-top: 20px;">
@@ -290,7 +291,7 @@ function calculateSettlement() {
 
   const detailHtml = results.map(r => `
     <div style="margin: 6px 0;">
-      ${r.name}：买入金额 ${r.buyAmount} 元，买入筹码 ${r.buyChips}，剩余筹码 ${r.remainChips}，盈亏 <strong style="color:${r.win >= 0 ? 'lightgreen' : 'tomato'}">${r.win.toFixed(2)} 元</strong><br>
+      ${r.name}：买入金额(元) ${r.buyAmount} 元，买入筹码 ${r.buyChips}，剩余筹码 ${r.remainChips}，盈亏 <strong style="color:${r.win >= 0 ? 'lightgreen' : 'tomato'}">${r.win.toFixed(2)} 元</strong><br>
       抽水金额：<strong style='color:orange'>${r.water.toFixed(2)} 元</strong><br>
       局头应转：<strong>${r.transferAmount.toFixed(2)} 元</strong>
     </div>
