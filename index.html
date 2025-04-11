@@ -130,7 +130,7 @@
   </div>
   <div>
     <input type="text" id="player-name" placeholder="玩家姓名" />
-    <button class="button" onclick="addPlayer()">添加玩家</button>
+    <button class="button" onclick="addPlayer()">添加新玩家</button>
 <div id="tip-msg" style="color:red; font-size:14px; height:20px;"></div>
   </div>
   <div>
@@ -259,7 +259,7 @@ function updateUI() {
         <div class="player-name">${formatId(p.id)}. ${p.name}</div>
         <div class="player-detail">买入: <strong style="color:#00e6e6;font-size:18px;">${p.totalBuyIn}元</strong> 筹码 <strong style="color:#ffd700;font-size:18px;">${p.chips} 💎</strong></div>
         <button class="button" onclick="withdrawLast(${p.id})">撤回买入</button>
-        <button class="button" onclick="deletePlayer(${p.id})">删除</button>
+        <button class="button" onclick="deletePlayer(${p.id})">删除玩家</button>
       </div>
     </div>
   `).join('');
