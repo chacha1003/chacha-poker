@@ -136,7 +136,7 @@
   <div>
     <select id="player-select"></select>
     <input type="number" inputmode="numeric" pattern="[0-9]*" step="1" inputmode="numeric" pattern="[0-9]*" step="1" id="buy-amount" placeholder="买入金额(元)" />
-    <button class="button" onclick="buyChips()">为玩家买入</button>
+    <button class="button" onclick="buyChips()">特定玩家买入</button>
     <button class="button" onclick="buyForAll()">全体玩家买入</button>
   </div>
   <div class="player-list" id="player-list"></div>
@@ -257,7 +257,7 @@ function updateUI() {
       <img class="avatar" src="${getAvatar(p.name)}">
       <div class="player-info">
         <div class="player-name">${formatId(p.id)}. ${p.name}</div>
-        <div class="player-detail">买入: <strong style="color:#00e6e6;font-size:18px;">${p.totalBuyIn}元</strong> 筹码 <strong style="color:#ffd700;font-size:18px;">${p.chips} 💎</strong></div>
+        <div class="player-detail">买入 <strong style="color:#00e6e6;font-size:18px;">${p.totalBuyIn}元</strong> 筹码 <strong style="color:#ffd700;font-size:20px;">${p.chips} 💎</strong></div>
         <button class="button" onclick="withdrawLast(${p.id})">撤回买入</button>
         <button class="button" onclick="deletePlayer(${p.id})">删除玩家</button>
       </div>
